@@ -1,0 +1,162 @@
+/* ************* */
+/* general stuff */
+/* ************* */
+@import url('https://fonts.googleapis.com/css?family=PT+Sans:400,700&display=swap');
+
+.custom-newsmdule {
+  font-family: 'PT Sans', sans-serif;
+  max-width: 100% !important;
+  padding: 25px;
+}
+
+
+/* ************ */
+/* list styling */
+/* ************ */
+.custom-newsmdule .custom-newsmodule__items {
+  font-family: 'PT Sans', sans-serif ;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+}
+
+
+/* ************************ */
+/* single list item styling */
+/* ************************ */
+.custom-newsmodule__item {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+@media(min-width: 767px) {
+  .custom-newsmodule__item {
+    width: 48%;
+    margin: 0 2% 30px;
+  }
+  .custom-newsmodule__item:nth-child(odd) {
+    margin-left: 0;
+  }
+  .custom-newsmodule__item:nth-child(even) {
+    margin-right: 0;
+  }
+}
+
+.custom-newsmodule__item .item__content-toggler {
+  display: none;
+}
+
+.custom-newsmodule__item .item__content-toggle {
+  color: #000;
+  background-color: #2a9e14;
+  display: inline-block;
+  margin: 0;
+  width: 100%;
+}
+.custom-newsmodule__item .item__content-toggle:hover {
+  cursor: pointer;
+}
+
+.custom-newsmodule__item .item__headline {
+  margin: 0;
+  position: relative;
+  padding: 0 55px 0 15px;
+  font-weight: 400;
+}
+.custom-newsmodule__item .item__headline::after {
+  content: '';
+  background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cGF0aCBkPSJNMjU2IDBDMTE0Ljg0IDAgMCAxMTQuODQyIDAgMjU2czExNC44NCAyNTYgMjU2IDI1NiAyNTYtMTE0Ljg0MiAyNTYtMjU2UzM5Ny4xNiAwIDI1NiAwem0wIDQ2Mi40NTJjLTExMy44MzcgMC0yMDYuNDUyLTkyLjYxNC0yMDYuNDUyLTIwNi40NTJTMTQyLjE2MyA0OS41NDggMjU2IDQ5LjU0OCA0NjIuNDUyIDE0Mi4xNjMgNDYyLjQ1MiAyNTYgMzY5LjgzNyA0NjIuNDUyIDI1NiA0NjIuNDUyeiIvPjxwYXRoIGQ9Ik0yNTYuMDEgMTY1LjE2MUwxMzUuNjA0IDI4NS41MDloMjQwLjc4NHoiLz48L3N2Zz4NCg==);
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%) rotate(0deg);
+  transition: transform .25s ease-in-out;
+}
+.custom-newsmodule__item .item__content-toggler:checked ~ .item__content-toggle .item__headline::after {
+  transform: translateY(-50%) rotate(-180deg);
+}
+
+.custom-newsmodule__item .item__content-wrapper {
+  opacity: 0;
+  max-height: 0;
+  padding: 15px;
+  background-color: #fff;
+  margin-bottom: 15px;
+  transition: opacity .4s ease-in-out,
+              max-height .25s ease-in;
+}
+.custom-newsmodule__item .item__content-toggler:checked ~ .item__content-wrapper {
+  opacity: 1;
+  max-height: 100%;
+}
+@media(min-width: 767px) {
+  .custom-newsmodule__item .item__content-wrapper {
+    margin-bottom: 0;
+  }
+}
+
+.custom-newsmodule__item .item__copy,
+.custom-newsmodule__item .item__copy p {
+  font-family: 'PT Sans', sans-serif !important;
+}
+
+.custom-newsmodule__item .item__link {
+  text-decoration: none;
+  display: inline-block;
+  overflow: hidden;
+  position: relative;
+  width: 135px;
+  color: #2a9e14;
+  transition: color .25s ease-in-out;
+}
+.custom-newsmodule__item .item__link:hover {
+  color: #000;
+}
+.custom-newsmodule__item .item__link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: -40%;
+  height: 2px;
+  width: 75%;
+  background-color: #2a9e14;
+  transition: left .25s ease-in-out,
+              background-color .25s ease-in-out;
+}
+.custom-newsmodule__item .item__link:hover::after {
+  left: 0;
+  background-color: #000;
+}
+.custom-newsmodule__item .item__link svg {
+  display: inline-block;
+  width: 15px;
+  margin-left: 5px;
+  transition: margin-left .25s ease-in-out;
+}
+.custom-newsmodule__item .item__link:hover svg {
+  margin-left: 10px;
+}
+.custom-newsmodule__item .item__link svg path {
+  fill: #2a9e14;
+  transition: fill .25s ease-in-out;
+}
+.custom-newsmodule__item .item__link:hover svg path {
+  fill: #000;
+}
+
+
+/* *********************** */
+/* info text / description */
+/* *********************** */
+.custom-newsmodule__information {
+  color: #636363;
+  font-size: 14px;
+  margin: 15px 0 0;
+  text-align: center;
+}
