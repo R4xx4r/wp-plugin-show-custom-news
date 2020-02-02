@@ -11,6 +11,11 @@
 *
 **/
 
+// no access if you call it directly
+if (!defined('ABSPATH')) {
+  exit;
+}
+
 function custom_newsmodule_settings_page() {
   add_menu_page (
     'Custom Plugin - News', // top level menu page
@@ -22,7 +27,6 @@ function custom_newsmodule_settings_page() {
   add_action('admin_init', 'custom_newsmodule_settings_init');
 }
 add_action('admin_menu', 'custom_newsmodule_settings_page');
-
 
 function custom_newsmodule_settings_init() {
   add_settings_section (

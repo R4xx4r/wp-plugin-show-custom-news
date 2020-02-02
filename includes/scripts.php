@@ -11,13 +11,17 @@
 *
 **/
 
+// no access if you call it directly
+if (!defined('ABSPATH')) {
+  exit;
+}
+
 // load backend styles and scripts
 function load_backend_scripts() {
-  wp_register_style( 'custom_backend_css', plugins_url( '../admin/css/styles.css', __FILE__) );
-  wp_enqueue_style( 'custom_backend_css' );
+  wp_register_style('custom_backend_css', plugins_url( '../admin/css/styles.css', __FILE__));
+  wp_enqueue_style('custom_backend_css');
 }
 add_action('admin_enqueue_scripts', 'load_backend_scripts');
-
 
 // load frontend styles and scripts
 function load_frontend_scripts() {
